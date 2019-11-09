@@ -4,7 +4,7 @@
 
 Features:
 <ul>
-  <li>customer base</li>
   <li>accounting of goods, products</li>
+  <li>customer base</li>
   <li>order to the supplier</li>
 </ul>
