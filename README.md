@@ -2,8 +2,8 @@
 
 Рrogram for accounting trade transactions in small shops
 
-Features:
-  customer base
-  accounting of goods, products
-  order to the supplier
-  
+<ul>Features:
+  <li>customer base</li>
+  <li>accounting of goods, products</li>
+  <li>order to the supplier</li>
+</ul>
