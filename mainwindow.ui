@@ -30,12 +30,25 @@
     <addaction name="separator"/>
     <addaction name="quitAction"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Допомога</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="aboutAction"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="quitAction">
    <property name="text">
     <string>Вихід</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>Про програму</string>
    </property>
   </action>
  </widget>
