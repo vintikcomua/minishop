@@ -30,7 +30,7 @@ FORMS += \
     mainwindow.ui
 
 TRANSLATIONS += \
-    minimarket_uk_UA.ts
+    minishop_uk_UA.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
