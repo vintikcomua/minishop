@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Крамничка</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/minishop.ico</normaloff>images/minishop.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -20,7 +24,7 @@
      <x>0</x>
      <y>0</y>
      <width>755</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
