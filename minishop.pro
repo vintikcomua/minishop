@@ -1,5 +1,4 @@
-QT       += core gui
-QT       += sql
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,20 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    about.cpp \
-    main.cpp \
-    mainwindow.cpp
+    forms/about/about.cpp \
+    forms/main/mainwindow.cpp \
+    main.cpp
 
 HEADERS += \
-    about.h \
-    mainwindow.h
+    forms/about/about.h \
+    forms/main/mainwindow.h
 
 FORMS += \
-    about.ui \
-    mainwindow.ui
+    forms/about/about.ui \
+    forms/main/mainwindow.ui
 
 TRANSLATIONS += \
-    minishop_uk_UA.ts
+    translations/minishop_uk_UA.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
