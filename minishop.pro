@@ -17,18 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     dialogs/aboutdialog.cpp \
-    forms/about/about.cpp \
     forms/main/mainwindow.cpp \
     main.cpp
 
 HEADERS += \
     dialogs/aboutdialog.h \
-    forms/about/about.h \
     forms/main/mainwindow.h
 
 FORMS += \
     dialogs/aboutdialog.ui \
-    forms/about/about.ui \
     forms/main/mainwindow.ui
 
 TRANSLATIONS += \
@@ -40,4 +37,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RC_ICONS = images/minishop.ico
-RESOURCES +=
+RESOURCES += \
+    minishop.qrc
+
+OUTPUT_DIR_NAME = output
+

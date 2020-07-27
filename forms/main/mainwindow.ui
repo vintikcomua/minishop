@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Крамничка</string>
+   <string>Mini Shop</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>images/minishop.ico</normaloff>images/minishop.ico</iconset>
+   <iconset resource="../../minishop.qrc">
+    <normaloff>:/images/minishop.ico</normaloff>:/images/minishop.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -29,14 +29,14 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>Файл</string>
+     <string>File</string>
     </property>
     <addaction name="separator"/>
     <addaction name="quitAction"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Допомога</string>
+     <string>Help</string>
     </property>
     <addaction name="separator"/>
     <addaction name="aboutAction"/>
@@ -47,32 +47,17 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="quitAction">
    <property name="text">
-    <string>Вихід</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="aboutAction">
    <property name="text">
-    <string>Про програму</string>
+    <string>About</string>
    </property>
   </action>
  </widget>
- <resources/>
- <connections>
-  <connection>
-   <sender>quitAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>377</x>
-     <y>184</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources>
+  <include location="../../minishop.qrc"/>
+ </resources>
+ <connections/>
 </ui>

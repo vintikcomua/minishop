@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>About</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -45,10 +45,13 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../images/minishop.ico</pixmap>
+    <pixmap resource="../minishop.qrc">:/images/minishop.ico</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="appNameLabel">
@@ -60,12 +63,26 @@
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Крамничка&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>Mini Shop</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../minishop.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

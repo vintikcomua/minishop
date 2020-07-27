@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/minishop.ico</file>
+        <file>translations/minishop_uk_UA.qm</file>
+    </qresource>
+</RCC>

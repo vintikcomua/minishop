@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "../about/about.h"
+#include "dialogs/aboutdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     createMenuBar();
+    createActions();
 }
 
 MainWindow::~MainWindow()
@@ -19,4 +20,17 @@ MainWindow::~MainWindow()
 void MainWindow::createMenuBar()
 {
 
+}
+
+void MainWindow::createActions() {
+
+    connect(ui->quitAction, &QAction::triggered, this, &MainWindow::close);
+    connect(ui->aboutAction, &QAction::triggered, this, &MainWindow::aboutMiniShop);
+}
+
+
+void MainWindow::aboutMiniShop()
+{
+    AboutDialog dialog(this);
+    dialog.exec();
 }
