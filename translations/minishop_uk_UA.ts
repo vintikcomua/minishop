@@ -29,15 +29,15 @@
     <message>
         <location filename="../forms/main/mainwindow.ui" line="39"/>
         <source>Help</source>
-        <translation>Допомога</translation>
+        <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../forms/main/mainwindow.ui" line="50"/>
+        <location filename="../forms/main/mainwindow.ui" line="54"/>
         <source>Quit</source>
-        <translation>Вихід</translation>
+        <translation>Вийти</translation>
     </message>
     <message>
-        <location filename="../forms/main/mainwindow.ui" line="55"/>
+        <location filename="../forms/main/mainwindow.ui" line="62"/>
         <source>About</source>
         <translation>Про програму</translation>
     </message>

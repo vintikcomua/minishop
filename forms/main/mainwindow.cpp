@@ -3,6 +3,8 @@
 
 #include "dialogs/aboutdialog.h"
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -23,6 +25,7 @@ void MainWindow::createMenuBar()
 }
 
 void MainWindow::createActions() {
+    qDebug() << QIcon::themeSearchPaths();
 
     connect(ui->quitAction, &QAction::triggered, this, &MainWindow::close);
     connect(ui->aboutAction, &QAction::triggered, this, &MainWindow::aboutMiniShop);
