@@ -13,6 +13,21 @@
         <source>Mini Shop</source>
         <translation>Крамничка</translation>
     </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="92"/>
+        <source>Рrogram for accounting trade transactions in small shops</source>
+        <translation>Програма для обліку торгових операцій в маленьких магазинах</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="140"/>
+        <source>Home page :</source>
+        <translation>Домашня строрінка :</translation>
+    </message>
+    <message>
+        <location filename="../dialogs/aboutdialog.ui" line="172"/>
+        <source>Version :</source>
+        <translation>Версія :</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -69,7 +84,7 @@
     <message>
         <location filename="../forms/main/mainwindow.ui" line="120"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished">Показати вікно про програму</translation>
+        <translation>Показати вікно про програму</translation>
     </message>
     <message>
         <location filename="../forms/main/mainwindow.ui" line="132"/>
