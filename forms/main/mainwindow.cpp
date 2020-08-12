@@ -8,13 +8,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //check the presence of the database driver in the system
-    if (!QSqlDatabase::drivers().contains("QSQLITE"))
-        QMessageBox::critical(
-                    this,
-                    tr("Unable to load database"),
-                    tr("This demo needs the SQLITE driver")
-                    );
+    loadSettings();
+
+    createConnection(databaseType, databaseHost, databaseName, databaseUser, databasePass);
+
+    model = new QSqlTableModel(this);
+    model->setTable("riCurrencyRatesLast");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select();
+
+    QTableView *view = new QTableView(this->centralWidget());
+    view->setModel(model);
+    view->resizeColumnsToContents();
+    view->show();
 
     createMenuBar();
     createActions();
@@ -23,6 +29,13 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+
+    saveSettings();
+    event->accept();
 }
 
 void MainWindow::createMenuBar()
@@ -41,4 +54,32 @@ void MainWindow::aboutMiniShop()
 {
     AboutDialog dialog(this);
     dialog.exec();
+}
+
+void MainWindow::loadSettings()
+{
+    QSettings settings("minishop.ini",
+                       QSettings::IniFormat);
+
+    settings.beginGroup("Database");
+        databaseType = settings.value("type","sqlite").toString();
+        databaseHost = settings.value("host","localhost").toString();
+        databaseName = settings.value("name","DB/minishop.db").toString();
+        databaseUser = settings.value("user","user").toString();
+        databasePass = settings.value("pass","pass").toString();
+    settings.endGroup();
+}
+
+void MainWindow::saveSettings()
+{
+    QSettings settings("minishop.ini",
+                       QSettings::IniFormat);
+
+    settings.beginGroup("Database");
+        settings.setValue("type", databaseType);
+        settings.setValue("host", databaseHost);
+        settings.setValue("name", databaseName);
+        settings.setValue("user", databaseUser);
+        settings.setValue("pass", databasePass);
+    settings.endGroup();
 }

@@ -3,6 +3,7 @@ QT       += core gui sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+CONFIG += file_copies
 
 #Application version information
 VERSION = 1.0.0
@@ -25,6 +26,7 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
+    connection.h \
     dialogs/aboutdialog.h \
     forms/main/mainwindow.h
 
@@ -35,6 +37,9 @@ FORMS += \
 TRANSLATIONS += \
     translations/minishop_uk_UA.ts
 
+DISTFILES += \
+    minishop.ini
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -44,5 +49,13 @@ RC_ICONS = images/minishop.ico
 RESOURCES += \
     minishop.qrc
 
-OUTPUT_DIR_NAME = output
+# copy database files to build dir
+database.path    = DB
+database.files   += DB/minishop.db
+
+setting.path   = $${OUT_PWD}
+setting.files   += minishop.ini
+
+COPIES      += database
+COPIES      += setting
 
