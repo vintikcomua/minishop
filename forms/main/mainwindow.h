@@ -43,5 +43,6 @@ class MainWindow : public QMainWindow
 
     private slots:
         void aboutMiniShop();
+        void openNomenclature();
 };
 #endif // MAINWINDOW_H

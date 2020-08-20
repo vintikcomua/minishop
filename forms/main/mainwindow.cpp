@@ -7,21 +7,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    //ui->mdiArea = new QMdiArea(this);
+    ui->mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     loadSettings();
 
     createConnection(databaseType, databaseHost, databaseName, databaseUser, databasePass);
 
-    model = new QSqlTableModel(this);
-    model->setTable("riCurrencyRatesLast");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    model->select();
 
-    QTableView *view = new QTableView(this->centralWidget());
-    view->setModel(model);
-    view->resizeColumnsToContents();
-    view->show();
-
+    //setCentralWidget(view);
+    //setCentralWidget(ui->mdiArea);
     createMenuBar();
     createActions();
 }
@@ -47,6 +42,8 @@ void MainWindow::createActions() {
 
     connect(ui->quitAction, &QAction::triggered, this, &MainWindow::close);
     connect(ui->aboutAction, &QAction::triggered, this, &MainWindow::aboutMiniShop);
+
+    connect(ui->actionNomenclature, &QAction::triggered, this, &MainWindow::openNomenclature);
 }
 
 
@@ -54,6 +51,23 @@ void MainWindow::aboutMiniShop()
 {
     AboutDialog dialog(this);
     dialog.exec();
+}
+
+void MainWindow::openNomenclature()
+{
+
+    model = new QSqlTableModel(this);
+    model->setTable("dicProducts");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select();
+
+    QTableView *view = new QTableView(this);
+    view->setModel(model);
+    view->resizeColumnsToContents();
+    view->setSelectionBehavior(QTableView::SelectRows);
+
+    ui->mdiArea->addSubWindow(view);
+    view->show();
 }
 
 void MainWindow::loadSettings()
