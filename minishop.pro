@@ -23,19 +23,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     dialogs/aboutdialog.cpp \
     forms/main/mainwindow.cpp \
-    forms/tablelistview/tablelistview.cpp \
     main.cpp
 
 HEADERS += \
     connection.h \
     dialogs/aboutdialog.h \
-    forms/main/mainwindow.h \
-    forms/tablelistview/tablelistview.h
+    forms/main/mainwindow.h
 
 FORMS += \
     dialogs/aboutdialog.ui \
-    forms/main/mainwindow.ui \
-    forms/tablelistview/tablelistview.ui
+    forms/main/mainwindow.ui
 
 TRANSLATIONS += \
     translations/minishop_uk_UA.ts

@@ -8,15 +8,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //ui->mdiArea = new QMdiArea(this);
-    ui->mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    ui->mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    //ui->mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    //ui->mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     loadSettings();
 
     createConnection(databaseType, databaseHost, databaseName, databaseUser, databasePass);
 
 
     //setCentralWidget(view);
-    //setCentralWidget(ui->mdiArea);
+    setCentralWidget(ui->mdiArea);
     createMenuBar();
     createActions();
 }
@@ -66,8 +66,10 @@ void MainWindow::openNomenclature()
     view->resizeColumnsToContents();
     view->setSelectionBehavior(QTableView::SelectRows);
 
-    ui->mdiArea->addSubWindow(view);
-    view->show();
+    QMdiSubWindow *subWindow = ui->mdiArea->addSubWindow(view);
+    subWindow->setWindowTitle("Товари");
+    //view->show();
+    subWindow->show();
 }
 
 void MainWindow::loadSettings()
