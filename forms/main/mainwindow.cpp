@@ -44,6 +44,7 @@ void MainWindow::createActions() {
     connect(ui->aboutAction, &QAction::triggered, this, &MainWindow::aboutMiniShop);
 
     connect(ui->actionNomenclature, &QAction::triggered, this, &MainWindow::openNomenclature);
+    connect(ui->actionManufacturers, &QAction::triggered, this, &MainWindow::openManufacturers);
 }
 
 
@@ -51,6 +52,25 @@ void MainWindow::aboutMiniShop()
 {
     AboutDialog dialog(this);
     dialog.exec();
+}
+
+void MainWindow::openManufacturers()
+{
+
+    model = new QSqlTableModel(this);
+    model->setTable("dicManufacturers");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select();
+
+    QTableView *view = new QTableView(this);
+    view->setModel(model);
+    view->resizeColumnsToContents();
+    view->setSelectionBehavior(QTableView::SelectRows);
+
+    QMdiSubWindow *subWindow = ui->mdiArea->addSubWindow(view);
+    subWindow->setWindowTitle("Виробники");
+    //view->show();
+    subWindow->show();
 }
 
 void MainWindow::openNomenclature()
