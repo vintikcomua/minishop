@@ -22,6 +22,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     dialogs/aboutdialog.cpp \
+    forms/classunitwigget.cpp \
     forms/dataform.cpp \
     forms/main/mainwindow.cpp \
     main.cpp
@@ -29,11 +30,13 @@ SOURCES += \
 HEADERS += \
     connection.h \
     dialogs/aboutdialog.h \
+    forms/classunitwigget.h \
     forms/dataform.h \
     forms/main/mainwindow.h
 
 FORMS += \
     dialogs/aboutdialog.ui \
+    forms/classunitwigget.ui \
     forms/dataform.ui \
     forms/main/mainwindow.ui
 
